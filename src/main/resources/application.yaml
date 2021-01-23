@@ -1,1 +1,13 @@
 debug: true
+---
+spring:
+  config:
+    activate:
+      on-profile: SAMPLE_FILE
+
+sample:
+  dispatcher:
+    file: "./resident-samples.csv"
+    interval: 1000
+    limit: 25
+

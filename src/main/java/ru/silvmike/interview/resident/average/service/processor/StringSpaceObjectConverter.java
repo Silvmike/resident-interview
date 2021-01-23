@@ -21,8 +21,8 @@ public class StringSpaceObjectConverter {
         Objects.requireNonNull(input, "Input string can not be null!");
 
         String[] csv = input.split(",");
-        if (csv.length != 2) {
-            throw new IllegalStateException("Wrong data format!");
+        if (csv.length != 3) {
+            throw new IllegalArgumentException("Wrong data format!");
         }
 
         long timestamp = Long.parseLong(csv[0]);

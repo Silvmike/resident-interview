@@ -13,6 +13,7 @@ public class AverageApplication {
 
 		new SpringApplicationBuilder()
 			.sources(AverageApplication.class, RootConfiguration.class)
+			.profiles(Profiles.STD_OUT_PROCESSOR, Profiles.SAMPLE_FILE, Profiles.STUB_AVERAGE_PROVIDER)
 			.run(args);
 	}
 
