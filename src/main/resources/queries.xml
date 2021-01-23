@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="sql.insert">
+        <![CDATA[
+            INSERT INTO AVERAGE (EVENT_TYPE, EVENT_DATE, VALUE_SUM, COUNT)
+            VALUES (:type, :timestamp, :value, 1)
+        ]]>
+    </entry>
+    <entry key="sql.increment">
+        <![CDATA[
+            UPDATE AVERAGE
+            SET COUNT = COUNT + 1, VALUE_SUM = VALUE_SUM + :value
+            WHERE EVENT_TYPE = :type AND EVENT_DATE = :timestamp
+        ]]>
+    </entry>
+    <entry key="sql.summary">
+        <![CDATA[
+            SELECT EVENT_TYPE, SUM(VALUE_SUM) as VALUE_SUM, SUM(COUNT) as COUNT
+            FROM AVERAGE
+            WHERE EVENT_TYPE = :type
+              AND EVENT_DATE >= (:left)
+              AND EVENT_DATE <= (:right)
+            GROUP BY EVENT_TYPE
+        ]]>
+    </entry>
+    <entry key="sql.clean">
+        <![CDATA[
+            DELETE FROM AVERAGE
+        ]]>
+    </entry>
+</properties>

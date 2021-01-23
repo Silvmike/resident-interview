@@ -1,4 +1,4 @@
-debug: true
+debug: false
 ---
 spring:
   config:
@@ -10,4 +10,21 @@ sample:
     file: "./resident-samples.csv"
     interval: 1000
     limit: 25
+
+---
+spring:
+  config:
+    activate:
+      on-profile: H2
+  datasource:
+    average:
+      hikari:
+        driver-class-name: org.h2.Driver
+        jdbc-url: jdbc:h2:mem:average
+        maximum-pool-size: 10
+        connection-test-query: select 1
+        connection-timeout: 1000
+  flyway:
+    locations: classpath:h2-schema
+    enabled: true
 
