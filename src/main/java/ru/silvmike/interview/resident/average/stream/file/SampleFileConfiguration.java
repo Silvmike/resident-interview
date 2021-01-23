@@ -6,9 +6,11 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean;
 import ru.silvmike.interview.resident.average.app.Profiles;
+import ru.silvmike.interview.resident.average.service.processor.ChainSpaceObjectProcessor;
 import ru.silvmike.interview.resident.average.service.processor.SpaceObjectInfoProcessor;
 import ru.silvmike.interview.resident.average.service.processor.StringSpaceObjectConverter;
 
+import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 
 @Profile(Profiles.SAMPLE_FILE)
@@ -18,12 +20,17 @@ public class SampleFileConfiguration {
 
     @Bean
     public SampleFileEventDispatcher sampleFileEventDispatcher(
-            SpaceObjectInfoProcessor processor,
+            List<SpaceObjectInfoProcessor> processors,
             StringSpaceObjectConverter converter,
             ScheduledExecutorService taskScheduler,
             SampleFileProperties config) {
 
-        return new SampleFileEventDispatcher(processor, converter, taskScheduler, config);
+        return new SampleFileEventDispatcher(
+            new ChainSpaceObjectProcessor(processors),
+            converter,
+            taskScheduler,
+            config
+        );
     }
 
     @Bean
