@@ -1,0 +1,1 @@
+GET http://localhost:8080/earth/average?from=1567102768&to=1567402770
