@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.scheduling.concurrent.ScheduledExecutorFactoryBean;
 import ru.silvmike.interview.resident.average.app.Profiles;
 import ru.silvmike.interview.resident.average.service.processor.ChainSpaceObjectProcessor;
+import ru.silvmike.interview.resident.average.service.processor.ErrorLoggingDelegatingSpaceObjectProcessor;
 import ru.silvmike.interview.resident.average.service.processor.SpaceObjectInfoProcessor;
 import ru.silvmike.interview.resident.average.service.processor.StringSpaceObjectConverter;
 
@@ -26,7 +27,9 @@ public class SampleFileConfiguration {
             SampleFileProperties config) {
 
         return new SampleFileEventDispatcher(
-            new ChainSpaceObjectProcessor(processors),
+            new ErrorLoggingDelegatingSpaceObjectProcessor(
+                new ChainSpaceObjectProcessor(processors)
+            ),
             converter,
             taskScheduler,
             config

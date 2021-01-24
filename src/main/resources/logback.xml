@@ -7,7 +7,7 @@
     </appender>
 
     <logger name="org.springframework.web.filter.CommonsRequestLoggingFilter" level="ERROR"/>
-    <logger name="ru.silvmike.interview.resident.average" level="INFO"/>
+    <logger name="ru.silvmike.interview.resident.average" level="DEBUG"/>
     <logger name="org.springframework.data.mongodb" level="ERROR"/>
 
     <root level="ERROR">

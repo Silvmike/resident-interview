@@ -16,7 +16,7 @@ public class DataSourceConfiguration {
 
     @FlywayDataSource
     @Bean(AVERAGE_DATA_SOURCE)
-    public DataSource walletDataSource(HikariConfig config) {
+    public DataSource averageDataSource(HikariConfig config) {
         return new HikariDataSource(config);
     }
 
