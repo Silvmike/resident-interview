@@ -7,6 +7,7 @@ import org.springframework.test.context.ActiveProfiles;
 import ru.silvmike.interview.resident.average.app.AverageApplication;
 import ru.silvmike.interview.resident.average.app.Profiles;
 import ru.silvmike.interview.resident.average.service.BaseAverageServiceTest;
+import ru.silvmike.interview.resident.average.service.h2.config.H2Configuration;
 
 import javax.sql.DataSource;
 

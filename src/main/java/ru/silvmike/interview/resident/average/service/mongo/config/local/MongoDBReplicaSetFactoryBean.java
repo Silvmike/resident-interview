@@ -1,4 +1,4 @@
-package ru.silvmike.interview.resident.average.service.mongo.local;
+package ru.silvmike.interview.resident.average.service.mongo.config.local;
 
 import com.github.silaev.mongodb.replicaset.MongoDbReplicaSet;
 import lombok.extern.slf4j.Slf4j;

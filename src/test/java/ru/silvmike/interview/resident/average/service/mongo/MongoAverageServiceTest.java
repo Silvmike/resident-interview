@@ -8,7 +8,7 @@ import org.springframework.test.context.ActiveProfiles;
 import ru.silvmike.interview.resident.average.app.AverageApplication;
 import ru.silvmike.interview.resident.average.app.Profiles;
 import ru.silvmike.interview.resident.average.service.BaseAverageServiceTest;
-import ru.silvmike.interview.resident.average.service.h2.H2Configuration;
+import ru.silvmike.interview.resident.average.service.mongo.config.MongoDbConfiguration;
 
 @SpringBootTest(
     classes = {

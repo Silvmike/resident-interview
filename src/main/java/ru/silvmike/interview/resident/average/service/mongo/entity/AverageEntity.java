@@ -7,7 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.CompoundIndex;
 import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import org.springframework.data.mongodb.core.mapping.Document;
-import ru.silvmike.interview.resident.average.service.mongo.projection.AverageProjection;
+import ru.silvmike.interview.resident.average.service.mongo.entity.projection.AverageProjection;
 
 import java.io.Serializable;
 

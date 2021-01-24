@@ -2,7 +2,7 @@ package ru.silvmike.interview.resident.average.service.mongo;
 
 import ru.silvmike.interview.resident.average.service.average.dto.Average;
 import ru.silvmike.interview.resident.average.service.mongo.entity.AverageEntity;
-import ru.silvmike.interview.resident.average.service.mongo.projection.AverageProjection;
+import ru.silvmike.interview.resident.average.service.mongo.entity.projection.AverageProjection;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

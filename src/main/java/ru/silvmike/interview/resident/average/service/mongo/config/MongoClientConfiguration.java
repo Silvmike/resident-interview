@@ -1,4 +1,4 @@
-package ru.silvmike.interview.resident.average.service.mongo;
+package ru.silvmike.interview.resident.average.service.mongo.config;
 
 import com.google.common.collect.ImmutableSet;
 import com.mongodb.ConnectionString;
@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.AbstractMongoClientConfiguration;
+import ru.silvmike.interview.resident.average.service.mongo.MongoSettingsProvider;
 import ru.silvmike.interview.resident.average.service.mongo.entity.AverageEntity;
 
 import java.util.Set;

@@ -1,4 +1,4 @@
-package ru.silvmike.interview.resident.average.service.mongo;
+package ru.silvmike.interview.resident.average.service.mongo.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -8,7 +8,10 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import ru.silvmike.interview.resident.average.app.Profiles;
 import ru.silvmike.interview.resident.average.service.average.AverageProvider;
-import ru.silvmike.interview.resident.average.service.mongo.local.MongoDBReplicaSetConfiguration;
+import ru.silvmike.interview.resident.average.service.mongo.MongoAverageProvider;
+import ru.silvmike.interview.resident.average.service.mongo.MongoSettingsProvider;
+import ru.silvmike.interview.resident.average.service.mongo.MongoSpaceObjectInfoProcessor;
+import ru.silvmike.interview.resident.average.service.mongo.config.local.MongoDBReplicaSetConfiguration;
 import ru.silvmike.interview.resident.average.service.processor.SpaceObjectInfoProcessor;
 
 @Profile(Profiles.MONGO)

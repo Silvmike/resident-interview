@@ -4,6 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
+/**
+ * Represents sample file dispatcher configuration properties.
+ */
 @Setter
 @Getter
 @ConfigurationProperties("sample.dispatcher")

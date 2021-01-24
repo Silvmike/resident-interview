@@ -1,4 +1,4 @@
-package ru.silvmike.interview.resident.average.service.h2;
+package ru.silvmike.interview.resident.average.service.h2.config;
 
 import org.springframework.context.annotation.*;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
@@ -7,6 +7,9 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import ru.silvmike.interview.resident.average.app.Profiles;
 import ru.silvmike.interview.resident.average.service.average.AverageProvider;
+import ru.silvmike.interview.resident.average.service.h2.H2AverageProvider;
+import ru.silvmike.interview.resident.average.service.h2.H2SQLProvider;
+import ru.silvmike.interview.resident.average.service.h2.H2SpaceObjectInfoProcessor;
 import ru.silvmike.interview.resident.average.service.processor.SpaceObjectInfoProcessor;
 
 import javax.sql.DataSource;

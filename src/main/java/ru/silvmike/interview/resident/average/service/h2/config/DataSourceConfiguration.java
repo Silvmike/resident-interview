@@ -1,4 +1,4 @@
-package ru.silvmike.interview.resident.average.service.h2;
+package ru.silvmike.interview.resident.average.service.h2.config;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;

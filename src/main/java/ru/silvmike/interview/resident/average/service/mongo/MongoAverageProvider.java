@@ -2,22 +2,19 @@ package ru.silvmike.interview.resident.average.service.mongo;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.aggregation.Aggregation;
 import org.springframework.data.mongodb.core.aggregation.GroupOperation;
 import org.springframework.data.mongodb.core.aggregation.MatchOperation;
-import org.springframework.data.mongodb.core.aggregation.ProjectionOperation;
 import org.springframework.data.mongodb.core.query.Criteria;
 import ru.silvmike.interview.resident.average.service.average.AverageProvider;
 import ru.silvmike.interview.resident.average.service.average.dto.Average;
 import ru.silvmike.interview.resident.average.service.average.dto.AverageRequest;
 import ru.silvmike.interview.resident.average.service.mongo.entity.AverageEntity;
-import ru.silvmike.interview.resident.average.service.mongo.projection.AverageProjection;
+import ru.silvmike.interview.resident.average.service.mongo.entity.projection.AverageProjection;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 import static org.springframework.data.mongodb.core.aggregation.Aggregation.*;
-import static org.springframework.data.mongodb.core.query.Criteria.where;
 import static ru.silvmike.interview.resident.average.service.mongo.entity.AverageEntity.Columns.*;
 
 /**

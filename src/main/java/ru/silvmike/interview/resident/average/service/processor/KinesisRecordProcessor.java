@@ -11,6 +11,9 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import ru.silvmike.interview.resident.average.service.processor.dto.SpaceObjectInfo;
 
+/**
+ * Kinesis processor delegating processing to {@link SpaceObjectInfoProcessor}.
+ */
 @Slf4j
 @RequiredArgsConstructor
 public class KinesisRecordProcessor implements IRecordProcessor {
