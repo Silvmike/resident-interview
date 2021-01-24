@@ -1,7 +1,13 @@
-debug: false
 spring:
   flyway:
     enabled: false
+---
+debug: true
+spring:
+  config:
+    activate:
+      on-profile: DEBUG
+
 ---
 spring:
   config:
@@ -12,7 +18,7 @@ sample:
   dispatcher:
     file: "./resident-samples.csv"
     interval: 1000
-    limit: 25
+    limit: 25000
 
 ---
 spring:
@@ -31,3 +37,21 @@ spring:
     locations: classpath:h2-schema
     enabled: true
 
+---
+spring:
+  config:
+    activate:
+      on-profile: MONGO
+  average:
+    mongo:
+      uri: "mongodb://localhost:27017/?connectTimeoutMS=10000&minPoolSize=0&maxPoolSize=10"
+      database: average
+
+---
+spring:
+  config:
+    activate:
+      on-profile: LOCAL_MONGO
+  average:
+    mongo:
+      auto-create-indexes: true

@@ -6,6 +6,11 @@ package ru.silvmike.interview.resident.average.app;
 public interface Profiles {
 
     /**
+     * Enables debug logging.
+     */
+    String DEBUG = "DEBUG";
+
+    /**
      * Enables sample file event dispatcher.
      */
     String SAMPLE_FILE = "SAMPLE_FILE";
@@ -24,5 +29,15 @@ public interface Profiles {
      * Enables H2-based implementation.
      */
     String H2 = "H2";
+
+    /**
+     * Enables MongoDB-based implementation.
+     */
+    String MONGO = "MONGO";
+
+    /**
+     * Enables local single-instance replica set.
+     */
+    String LOCAL_MONGO = "LOCAL_MONGO";
 
 }

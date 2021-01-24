@@ -13,7 +13,7 @@ public class AverageApplication {
 
 		new SpringApplicationBuilder()
 			.sources(AverageApplication.class, RootConfiguration.class)
-			.profiles(Profiles.H2, Profiles.SAMPLE_FILE)
+			.profiles(Profiles.MONGO, Profiles.LOCAL_MONGO, Profiles.SAMPLE_FILE)
 			.run(args);
 	}
 

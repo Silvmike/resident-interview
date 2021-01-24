@@ -4,7 +4,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
 
-public class H2CleanUpHelper {
+class H2CleanUpHelper {
 
     private final JdbcTemplate jt;
     private final H2SQLProvider sqlProvider;

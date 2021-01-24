@@ -1,1 +1,10 @@
 GET http://localhost:8080/earth/average?from=1567102768&to=1567402770
+
+###
+GET http://localhost:8080/neptune/average?from=1567102768&to=1567402770
+
+###
+GET http://localhost:8080/mars/average?from=1567102768&to=1567402770
+
+###
+GET http://localhost:8080/pluto/average?from=1567102768&to=1567402770

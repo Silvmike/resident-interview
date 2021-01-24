@@ -1,34 +1,31 @@
-package ru.silvmike.interview.resident.average.service.h2;
+package ru.silvmike.interview.resident.average.service.mongo;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.test.context.ActiveProfiles;
 import ru.silvmike.interview.resident.average.app.AverageApplication;
 import ru.silvmike.interview.resident.average.app.Profiles;
 import ru.silvmike.interview.resident.average.service.BaseAverageServiceTest;
-
-import javax.sql.DataSource;
+import ru.silvmike.interview.resident.average.service.h2.H2Configuration;
 
 @SpringBootTest(
     classes = {
         AverageApplication.class,
-        H2Configuration.class
+        MongoDbConfiguration.class
     },
     webEnvironment = SpringBootTest.WebEnvironment.NONE
 )
-@ActiveProfiles({ Profiles.H2 })
-class H2AverageModeTest extends BaseAverageServiceTest {
+@ActiveProfiles({ Profiles.MONGO, Profiles.LOCAL_MONGO })
+class MongoAverageServiceTest extends BaseAverageServiceTest {
 
     @Autowired
-    private DataSource dataSource;
-
-    @Autowired
-    private H2SQLProvider sqlProvider;
+    private MongoTemplate mongoTemplate;
 
     @BeforeEach
     public void setUp() {
-        new H2CleanUpHelper(dataSource, sqlProvider).cleanUp();
+        new MongoCleanUpHelper(mongoTemplate).cleanUp();
     }
 
 }
