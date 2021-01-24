@@ -8,7 +8,7 @@ Also, it provides average statistics on read events through the following API:
 
 ### Request
 ```
-GET http://{hostname}/{eventType}/average?from={timestamp}&to={timestamp}
+GET http://localhost:8080/{eventType}/average?from={timestamp}&to={timestamp}
 ```
 Where:
  * **eventType** is a type of event (e.g. 'earth')
