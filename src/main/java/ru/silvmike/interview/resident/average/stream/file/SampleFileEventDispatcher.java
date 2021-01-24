@@ -2,6 +2,8 @@ package ru.silvmike.interview.resident.average.stream.file;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.boot.context.event.ApplicationStartedEvent;
+import org.springframework.context.ApplicationListener;
 import org.springframework.util.ResourceUtils;
 import ru.silvmike.interview.resident.average.service.processor.SpaceObjectInfoProcessor;
 import ru.silvmike.interview.resident.average.service.processor.StringSpaceObjectConverter;
@@ -24,7 +26,7 @@ import java.util.concurrent.TimeUnit;
  * </pre>
  */
 @Slf4j
-public class SampleFileEventDispatcher {
+public class SampleFileEventDispatcher implements ApplicationListener<ApplicationStartedEvent> {
 
     private static final int MEGABYTE = 1024 * 1024;
 
@@ -121,7 +123,6 @@ public class SampleFileEventDispatcher {
                 ),
                 MEGABYTE
             );
-            scheduleNext();
         } catch (FileNotFoundException e) {
             log.error("File [{}] was not found", config.getFile(), e);
         }
@@ -144,6 +145,13 @@ public class SampleFileEventDispatcher {
             } catch (IOException e) {
                 // doesn't matter
             }
+        }
+    }
+
+    @Override
+    public void onApplicationEvent(ApplicationStartedEvent applicationStartedEvent) {
+        if (this.reader != null) {
+            scheduleNext();
         }
     }
 }
