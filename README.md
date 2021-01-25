@@ -13,7 +13,7 @@ GET http://localhost:8080/{eventType}/average?from={timestamp}&to={timestamp}
 Where:
  * **eventType** is a type of event (e.g. 'earth')
  * **from** is a timestamp in seconds of the beginning of the interval
- * **to** is a timestamp in seconds of the beginning of the interval
+ * **to** is a timestamp in seconds of the end of the interval
  
 ### Response
 ```
